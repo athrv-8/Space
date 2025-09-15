@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRAO - National Research in Aeronautics Organisation</title>
+    <!-- Use Tailwind CSS for a clean, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .section-container {
+            height: 100vh;
+            min-height: 500px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .section-content {
+            z-index: 10;
+            padding-bottom: 8rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive menu icon */
+        .menu-icon {
+            cursor: pointer;
+            z-index: 50;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Utility classes for animation */
+        .animate-fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body class="bg-gray-950 text-white">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300">
+        <nav class="flex justify-between items-center py-4 px-6 md:px-12">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-widest uppercase transition-all duration-300">
+                NRAO
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium uppercase">
+                <a href="#mission" class="hover:text-gray-300 transition-colors duration-200">Missions</a>
+                <a href="#vehicles" class="hover:text-gray-300 transition-colors duration-200">Vehicles</a>
+                <a href="#careers" class="hover:text-gray-300 transition-colors duration-200">Careers</a>
+                <a href="#updates" class="hover:text-gray-300 transition-colors duration-200">Updates</a>
+                <a href="#shop" class="hover:text-gray-300 transition-colors duration-200">Shop</a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <div class="lg:hidden">
+                <div id="menuIcon" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-30 lg:hidden">
+        <nav class="flex flex-col items-center pt-24 space-y-8 text-lg font-semibold uppercase">
+            <a href="#mission" class="hover:text-gray-300 transition-colors duration-200">Missions</a>
+            <a href="#vehicles" class="hover:text-gray-300 transition-colors duration-200">Vehicles</a>
+            <a href="#careers" class="hover:text-gray-300 transition-colors duration-200">Careers</a>
+            <a href="#updates" class="hover:text-gray-300 transition-colors duration-200">Updates</a>
+            <a href="#shop" class="hover:text-gray-300 transition-colors duration-200">Shop</a>
+        </nav>
+    </div>
+
+    <!-- Main Hero Section with Video Background -->
+    <section class="section-container bg-black" id="hero">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <!-- Placeholder for video, replace with an actual video URL -->
+            <video class="w-full h-full object-cover" autoplay loop muted poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Video+Placeholder">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-star-trails-over-a-mountain-2481-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="section-overlay"></div>
+        <div class="section-content animate-fade-in">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter uppercase mb-4">
+                EXPLORING THE FRONTIERS
+            </h1>
+            <p class="text-lg sm:text-xl lg:text-2xl font-medium tracking-wide mb-8">
+                Pioneering the future of aerospace research and development.
+            </p>
+            <button class="px-8 py-3 rounded-full border-2 border-white text-lg font-semibold uppercase hover:bg-white hover:text-black transition-colors duration-300">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <!-- Mission Section 1: Future Starship -->
+    <section class="section-container bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Placeholder+Image+1');" id="mission">
+        <div class="section-overlay"></div>
+        <div class="section-content animate-fade-in text-center">
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
+                THE LUNAR GATEWAY
+            </h2>
+            <p class="text-md sm:text-lg lg:text-xl font-medium mb-8">
+                A new era of lunar exploration begins with our next-generation lunar lander.
+            </p>
+            <button class="px-8 py-3 rounded-full border-2 border-white text-lg font-semibold uppercase hover:bg-white hover:text-black transition-colors duration-300">
+                Explore Mission
+            </button>
+        </div>
+    </section>
+
+    <!-- Mission Section 2: Falcon 9 -->
+    <section class="section-container bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Placeholder+Image+2');" id="vehicles">
+        <div class="section-overlay"></div>
+        <div class="section-content animate-fade-in text-center">
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
+                REUSABLE LAUNCH SYSTEMS
+            </h2>
+            <p class="text-md sm:text-lg lg:text-xl font-medium mb-8">
+                Revolutionizing space access with reliable and cost-effective launch vehicles.
+            </p>
+            <button class="px-8 py-3 rounded-full border-2 border-white text-lg font-semibold uppercase hover:bg-white hover:text-black transition-colors duration-300">
+                Discover Vehicles
+            </button>
+        </div>
+    </section>
+
+    <!-- Mission Section 3: Dragon -->
+    <section class="section-container bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Placeholder+Image+3');" id="careers">
+        <div class="section-overlay"></div>
+        <div class="section-content animate-fade-in text-center">
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold uppercase mb-4">
+                JOIN THE TEAM
+            </h2>
+            <p class="text-md sm:text-lg lg:text-xl font-medium mb-8">
+                Be a part of the incredible journey to redefine space travel.
+            </p>
+            <button class="px-8 py-3 rounded-full border-2 border-white text-lg font-semibold uppercase hover:bg-white hover:text-black transition-colors duration-300">
+                View Openings
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 md:px-12 text-center text-sm text-gray-400">
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-4">
+            <a href="#" class="hover:text-white transition-colors duration-200">NRAO © 2024</a>
+            <a href="#" class="hover:text-white transition-colors duration-200">UPDATES</a>
+            <a href="#" class="hover:text-white transition-colors duration-200">CAREERS</a>
+            <a href="#" class="hover:text-white transition-colors duration-200">INVESTORS</a>
+            <a href="#" class="hover:text-white transition-colors duration-200">PRIVACY POLICY</a>
+        </div>
+        <p class="mt-4">
+            Note: This is a design concept inspired by the SpaceX website and is not an official website for any organization. All content is for demonstration purposes.
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript for the mobile menu functionality
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('open');
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('open');
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+
+        // Scroll animation for sections
+        const sections = document.querySelectorAll('.section-container');
+        const observerOptions = {
+            root: null,
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.section-content').classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // JavaScript for header scroll effect
+        const mainHeader = document.getElementById('main-header');
+        const logo = mainHeader.querySelector('a');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Change header background and shrink logo on scroll
+                mainHeader.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+                mainHeader.classList.remove('bg-transparent');
+                logo.classList.remove('text-2xl');
+                logo.classList.add('text-lg');
+            } else {
+                // Restore original state at the top
+                mainHeader.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+                mainHeader.classList.add('bg-transparent');
+                logo.classList.remove('text-lg');
+                logo.classList.add('text-2xl');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
